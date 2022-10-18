@@ -1,6 +1,8 @@
 package valdes.com.company;
 
 public class MyLinkedList<T> {
+    public HandlerOfElements handlerOfElements = new HandlerOfElements();
+
     private class Node {
         public T value;
         public Node next;
@@ -47,6 +49,8 @@ public class MyLinkedList<T> {
             tail = head;
         }
         size++;
+
+        handlerOfElements.onAdding(value);
     }
 
     public void addLast(T value) {
@@ -58,6 +62,8 @@ public class MyLinkedList<T> {
         }
 
         size++;
+        handlerOfElements.onAdding(value);
+
     }
 
     private Node getNode(int index) {
@@ -70,7 +76,9 @@ public class MyLinkedList<T> {
 
 
     public T get(int index) {
+        handlerOfElements.onGetting(index);
         return getNode(index).value;
+
     }
 
     public void remove(int index) {
@@ -96,5 +104,7 @@ public class MyLinkedList<T> {
         }
 
         size--;
+        handlerOfElements.onRemoving(current.value);
     }
+
 }

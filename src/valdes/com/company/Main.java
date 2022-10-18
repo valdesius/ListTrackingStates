@@ -5,7 +5,9 @@ public class Main {
     public static void main(String[] args) {
         MyLinkedList myLinkedList = new MyLinkedList();
         myLinkedList.addFirst(10);
-        showLinkedList(myLinkedList);
+        myLinkedList.addLast(70);
+        myLinkedList.addLast(3);
+        myLinkedList.remove(2);
     }
     public static void showLinkedList(MyLinkedList linkedList){
         System.out.println("Обновленный список");

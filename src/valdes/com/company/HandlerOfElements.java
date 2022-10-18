@@ -2,7 +2,7 @@ package valdes.com.company;
 
 public class HandlerOfElements<T> implements IHandler<T> {
     private String textForAdd = "Добавлен элемент ";
-    private String textForRemove = "Удален элемент";
+    private String textForRemove = "Удален элемент ";
     private String textForGet = "Получен элемент";
     private String textForOldEl = "Старый элемент ";
     private String textForUpdateEl = " был заменен на новый элемент ";
