@@ -8,10 +8,7 @@ public class Main {
         myLinkedList.addLast(70);
         myLinkedList.addLast(3);
         myLinkedList.remove(2);
+        myLinkedList.get(0);
+        myLinkedList.set(0, 90);
     }
-    public static void showLinkedList(MyLinkedList linkedList){
-        System.out.println("Обновленный список");
-        for (int i = 0; i< linkedList.size(); i++){
-            System.out.println((linkedList.get(i)));
-        }}
 }

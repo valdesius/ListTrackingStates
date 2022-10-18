@@ -1,7 +1,7 @@
 package valdes.com.company;
 
 public class MyLinkedList<T> {
-    public HandlerOfElements handlerOfElements = new HandlerOfElements();
+    private final HandlerOfElements handlerOfElements = new HandlerOfElements();
 
     private class Node {
         public T value;
@@ -66,6 +66,13 @@ public class MyLinkedList<T> {
 
     }
 
+    public void set(int index, T value) {
+        Node neww = getNode(index - 1);
+        T oldVal = neww.value;
+        neww.value = value;
+        handlerOfElements.onReplacing(oldVal, neww.value);
+    }
+
     private Node getNode(int index) {
         Node curr = head;
         for (int i = 0; i < index; i++) {
@@ -76,7 +83,7 @@ public class MyLinkedList<T> {
 
 
     public T get(int index) {
-        handlerOfElements.onGetting(index);
+        handlerOfElements.onGetting(getNode(index).value);
         return getNode(index).value;
 
     }
